@@ -94,3 +94,47 @@ body:lang(ja) {
 }
 :lang(ja) h1 { font-size: 26px; }
 :lang(ja) h2 { font-size: 20px; }
+
+/* Key points box at the top of each Japanese page. */
+.summary {
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 14px 16px 6px;
+  margin: 0 0 28px;
+  font: 15px/1.7 system-ui, sans-serif;
+}
+.summary-title {
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 6px;
+}
+.summary ul { padding-left: 1.2em; margin: 0 0 8px; }
+
+/* Screenshots taken by the site owner, quoted with a caption. */
+figure.shot { margin: 12px 0 20px; }
+figure.shot img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+figure.shot figcaption {
+  font: 13px/1.5 system-ui, sans-serif;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* Yes / no marks in comparison tables. */
+.yes, .no, .partial { font-weight: 700; font-size: 1.15em; white-space: nowrap; }
+.yes { color: #2e7d4f; }
+.no { color: #b3412e; }
+.partial { color: #a06a00; }
+@media (prefers-color-scheme: dark) {
+  .yes { color: #7fd1a0; }
+  .no { color: #f08b78; }
+  .partial { color: #e2b35a; }
+}
+td.best { background: var(--box); }
+.glance td:nth-child(n+2), .glance th:nth-child(n+2) { min-width: 5.5em; }
