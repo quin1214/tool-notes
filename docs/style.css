@@ -84,3 +84,13 @@ footer {
   font: 14px/1.6 system-ui, sans-serif;
   color: var(--muted);
 }
+
+/* Japanese pages (docs/ja/): serif fonts above have no Japanese glyphs,
+   so use the system Japanese fonts instead. */
+:lang(ja) body,
+body:lang(ja) {
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.8;
+}
+:lang(ja) h1 { font-size: 26px; }
+:lang(ja) h2 { font-size: 20px; }
