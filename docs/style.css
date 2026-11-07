@@ -164,3 +164,80 @@ h2[id] { scroll-margin-top: 16px; }
 }
 .author-title { font-weight: 700; margin: 0 0 4px; }
 .author p:last-child { margin: 0; }
+
+/* ---------- Japanese pages: a little more color (2026-11-07) ----------
+   Scoped with :lang(ja) so the English pages keep their plain look.
+   Still no vendor colors or logos. */
+:root {
+  --warm: #c2622d;        /* call-to-action buttons */
+  --warm-dark: #a24f20;
+  --accent-soft: #e6efe9; /* heading band, experience box */
+  --warn-bg: #fff4e5;
+  --warn-line: #e0a458;
+  --exp-bg: #eaf1f8;      /* owner's hands-on notes */
+  --exp-line: #b9cde3;
+  --exp-text: #2f5a85;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --warm: #e08a55;
+    --warm-dark: #f0a374;
+    --accent-soft: #23302b;
+    --warn-bg: #33281a;
+    --warn-line: #8a6430;
+    --exp-bg: #1f2a35;
+    --exp-line: #34506e;
+    --exp-text: #9cc0e6;
+  }
+}
+
+/* Header band with the site name. */
+:lang(ja) .site {
+  margin: -24px -16px 28px;
+  padding: 14px 16px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 500;
+}
+:lang(ja) .site a { color: var(--bg); font-weight: 700; font-size: 16px; margin-right: 4px; }
+@media (min-width: 712px) {
+  :lang(ja) .site { border-radius: 0 0 8px 8px; }
+}
+
+/* Section headings: left bar on a soft band. */
+:lang(ja) h2 {
+  border-left: 5px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 8px 12px;
+  border-radius: 0 6px 6px 0;
+  margin: 44px 0 14px;
+}
+
+/* Warm call-to-action button, distinct from the green used for text. */
+:lang(ja) .cta { background: var(--warm); color: #fff; }
+:lang(ja) .cta:hover { background: var(--warm-dark); }
+
+/* The TOC already shows the heading numbers, so drop the list numbers. */
+.toc ol { list-style: none; padding-left: 0; }
+
+/* Owner's hands-on notes and warnings. */
+.experience {
+  background: var(--exp-bg);
+  border: 1px solid var(--exp-line);
+  border-radius: 8px;
+  padding: 14px 16px 4px;
+  margin: 0 0 16px;
+}
+.experience-label, .warn-label {
+  font: 700 13px/1.4 system-ui, sans-serif;
+  margin: 0 0 6px;
+}
+.experience-label { color: var(--exp-text); }
+.warn {
+  background: var(--warn-bg);
+  border-left: 4px solid var(--warn-line);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 14px 2px;
+  margin: 0 0 16px;
+}
+.warn-label { color: var(--warm-dark); }
